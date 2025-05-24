@@ -1,28 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://i.pinimg.com/564x/5a/2c/a7/5a2ca7ddaa861395c06246a23a9b58dd.jpg" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+    font-family: 'Open Sans', sans-serif;
+    color: #f4f4f4;
+    background-color: #1c1c1c;
+    position: relative;
+    min-height: 100vh;
+   margin: 0; /* Important to remove default margin */
+}
+
+   body::before {
+   content: "";
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center / cover;
+   opacity: 0.3;
+   z-index: -1;
+}
+
+   header {
+   background: rgba(28, 28, 28, 0.95);
+  display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem 2rem;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+  }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #f4f4f4;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #f4f4f4;
+      font-weight: 600;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #c0a37d;
+    }
+
+    section {
+      padding: 3rem;
+      background: rgba(28, 28, 28, 0.95);
+      margin: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      display: none;
+    }
+
+    section.active {
+      display: block;
+  }
+
+    section p {
+       margin-bottom: 1.5rem;
+    }
+
+    section ul {
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .intro img {
+      max-width: 200px;
+      border-radius: 10px;
+      margin-right: 2rem;
+    }
+
+    .intro-text {
+      max-width: 600px;
+    }
+
+    .intro-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 1.1rem;
+      margin: 2rem 0;
+      color: #f4f4f4;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding-bottom: 2rem;
+    }
+
+    .buttons a {
+      background-color: #c0a37d;
+      color: #1c1c1c;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .buttons a:hover {
+      background-color: #a1866f;
+    }
+
+    @media (max-width: 768px) {
+      .intro {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro img {
+        margin: 0 0 1.5rem;
+      }
+
+      .intro-text {
+        max-width: 90%;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header>
-    <h1>Hi, I'm Ehralana Navarro</h1>
-    <p>Web Developer | Designer | Learner</p>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a onclick="showSection('about')">About</a>
+      <a onclick="showSection('certificate')">Certificate</a>
+      <a onclick="showSection('developer')">Web Developer</a>
+      <a onclick="showSection('contact')">Contact</a>
+    </nav>
   </header>
 
-  <section class="projects">
-    <h2>My Projects</h2>
-    <ul>
-      <li>Portfolio Website</li>
-      <li>To-Do App</li>
-      <li>Weather App</li>
-    </ul>
+  <section class="intro">
+    <img src="https://scontent-mnl1-1.xx.fbcdn.net/v/t39.30808-6/481097311_667897582241809_8009843868927428688_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGViFvNpt1Wkm4oDmeNIvBg3yTT8uXrYAjfJNPy5etgCFeYjWT1WT_cXUbV1-Ht0Qg1ye8gm5r9BiqRmEiEAkj4&_nc_ohc=uwbUYX4sK5sQ7kNvwGHUHgz&_nc_oc=AdnNUL2j43JH7qa4VNtt2lm94S4C5a-RMPya1qR88F93FXIcp8O5fERh9A5Jte5Otz8&_nc_zt=23&_nc_ht=scontent-mnl1-1.xx&_nc_gid=URmbWKqJP-u3D-B2G3tNOg&oh=00_AfJS_uebLWLta29GpOdJhk_SOTjKnleH3u6Fij9AN8tOdQ&oe=6837174B" alt="Ehra Lane Navarro" />
+    <div class="intro-text">
+      <small>ABOUT ME</small>
+      <h2>Hi! I’m Ehra Lane Navarro</h2>
+    </div>
   </section>
 
-  <footer>
-    <p>Connect with me on <a href="#">LinkedIn</a></p>
-  </footer>
+  <p class="description">
+    A Student of Pampanga State Agricultural University and currently taking a Bachelor of Science in Information Technology.
+  </p>
+
+  <div class="buttons">
+    <a onclick="showSection('about')">About</a>
+    <a onclick="showSection('certificate')">Certificate</a>
+    <a onclick="showSection('developer')">Web Developer</a>
+    <a onclick="showSection('contact')">Contact</a>
+  </div>
+
+  <section id="about">
+  <h2>About</h2>
+    <p>
+    <p>Hello! I'm Ehra Lane Navarro, a 19-year-old student from Masantol, Pampanga.
+    <p>I am currently pursuing a Bachelor of Science in Information Technology at Pampanga State Agricultural University (PSAU).</p>
+    <p>As an IT student, I am immersed in a wide range of fascinating topics such as programming languages (Java, Python, C++), web development (HTML, CSS, JavaScript), networking, cybersecurity, data analytics, and more. These subjects equip me with both theoretical knowledge and practical skills.</p>
+    <p>Beyond academics, I actively engage in hands-on projects, internships, and hackathons that strengthen my problem-solving, teamwork, and project management abilities. I enjoy working on real-world challenges that foster critical thinking and innovation.</p>
+    <p>One of my core passions is programming. I believe that writing efficient, secure, and scalable code is the foundation of impactful technology. Whether it's building websites, mobile apps, or AI systems, I thrive in translating ideas into functional digital solutions.</p>
+    <p>Staying up-to-date with the ever-evolving tech landscape is crucial. I continuously expand my learning through workshops, conferences, online courses, and tech communities.</p>
+    <p><strong>Key Skills:</strong>
+    <ul>
+    <li>Programming: Java, Python, C++, HTML</li>
+    <li>Web Development: HTML, CSS, JavaScript</li>
+    <li>Operating Systems: Windows, Linux, macOS</li>
+    <li>Networking: TCP/IP, DNS fundamentals</li>
+    <li>Data Structures and Algorithms</li>
+    </ul>
+    </p>
+  </section>
+
+  <section id="certificate">
+    <h2>Certificate</h2>
+     <img src="https://api2.sololearn.com/v2/certificates/CC-JZUQP9HT/image/png?t=638835033048158980" alt="image" style="width:100%; border-radius: 10px; margin-top: 1rem;">
+  <img src="https://api2.sololearn.com/v2/certificates/CC-HHLKVZXX/image/png?t=638835040094052400" style="width:100%; border-radius: 10px; margin-top: 1rem;">
+  <img src="https://api2.sololearn.com/v2/certificates/CC-MRKLO9AO/image/png?t=638835042611605440" style="width:100%; border-radius: 10px; margin-top: 1rem;">
+  </section>
+
+  <section id="developer">
+    <h2>Web Developer</h2>
+    <p>
+    <p>As a web development student, I spend countless hours honing my coding skills and building innovative websites to showcase my creativity and technical expertise. I'm creating some works in web developer, if you want to negotiate with me just contact me
+here are some of my works:
+     <p> 1. Designing and building websites
+     <p> 2. Writing and editing code (HTML, CSS, JavaScript, etc.)
+     <p> 3. Developing web applications and features.
+</p>
+</section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+    <p>Interested in working together or learning more? Feel free to reach out via email:
+      <a href="ehralanenavarro06@gmail.com" style="color: #c0a37d;">ehralanenavarro06@gmail.com</a></p>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(section => {
+        if (section.id) {
+          section.classList.remove('active');
+        }
+      });
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
+
 </html>
+
